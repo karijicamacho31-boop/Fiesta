@@ -1,0 +1,253 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 🚫 Quitar scroll */
+body {
+  overflow: hidden;
+  font-family: Arial;
+}
+
+/* Pantalla completa */
+.main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e9e9e9;
+}
+
+/* Tarjeta principal */
+.card {
+  width: 90%;
+  max-width: 380px;
+  height: auto;
+  border: 8px solid #ff6a00;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+/* Líneas decorativas */
+.line {
+  height: 2px;
+  background: #ff6a00;
+  margin: 5px 0;
+}
+
+.invite {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+/* Título principal */
+h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 60px;
+  line-height: 0.9;
+  color: #2d1b14;
+}
+
+/* Subtítulo */
+h2 {
+  font-family: 'Pacifico', cursive;
+  color: #ff6a00;
+  font-size: 28px;
+}
+
+/* Iconos */
+.icons {
+  font-size: 40px;
+  color: #ff6a00;
+}
+
+/* Info */
+.info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+/* Botón estilo imagen */
+button {
+  border: none;
+  background: none;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* Registro oculto */
+#registro {
+  display: none;
+  text-align: center;
+  padding: 40px;
+}
+
+/* Sección registro */
+.registro {
+  height: 100vh;
+  background: linear-gradient(135deg, #ff6a00, #ff8c42);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial;
+}
+
+/* Tarjeta */
+.registro-card {
+  background: #f2f2f2;
+  padding: 30px 25px;
+  width: 90%;
+  max-width: 350px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  border: 5px solid white;
+}
+
+/* Título */
+.registro-card h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+/* Subtexto */
+.sub {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* Input */
+input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ff6a00;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* Botón */
+.registro-card button {
+  width: 100%;
+  padding: 12px;
+  background: #ff6a00;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.registro-card button:hover {
+  background: #e55a00;
+}
+
+/* Resultado estilo dorsal */
+.resultado {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Número grande */
+.numero {
+  font-size: 50px;
+  color: #ff6a00;
+  margin-top: 10px;
+}
+
+
+
+/* Botón principal registro */
+.btn-registro {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(45deg, #ff6a00, #ff9a3c);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-registro:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Resultado tipo tarjeta dorsal */
+.resultado {
+  margin-top: 20px;
+  padding: 15px;
+  background: white;
+  border: 2px dashed #ff6a00;
+  border-radius: 8px;
+  animation: aparecer 0.4s ease;
+}
+
+.numero {
+  font-size: 65px;
+  color: #ff6a00;
+  font-weight: bold;
+}
+
+/* Lista más pro */
+.lista ul {
+  max-height: 140px;
+  overflow-y: auto;
+}
+
+.lista li {
+  padding: 6px;
+  font-size: 14px;
+}
+
+/* Botón regresar */
+.btn-back {
+  margin-top: 15px;
+  width: 100%;
+  padding: 12px;
+  background: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-back:hover {
+  background: #111;
+}
+
+/* Animación */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Zona secreta invisible */
+#secretZone {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  z-index: 999;
+}
+
+

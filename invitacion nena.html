@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Birthday Nena Run</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  overflow: hidden;
+}
+
+/* ===== PORTADA ===== */
+.main {
+  height: 100vh;
+  background: #eeeeee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 90%;
+  max-width: 380px;
+  height: 90vh;
+  border: 8px solid #ff6a00;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.line {
+  height: 2px;
+  background: #ff6a00;
+}
+
+.invite {
+  font-size: 12px;
+}
+
+h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 58px;
+  line-height: 0.9;
+  color: #2d1b14;
+}
+
+h2 {
+  font-family: 'Pacifico', cursive;
+  color: #ff6a00;
+  font-size: 26px;
+}
+
+.icons {
+  font-size: 40px;
+  color: #ff6a00;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.btn-main {
+  border: none;
+  background: none;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* ===== REGISTRO ===== */
+.registro {
+  display: none;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff6a00, #ff8c42);
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
+
+/* Fondo con efecto glow */
+.registro::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  top: 10%;
+  left: 10%;
+}
+
+/* CONTENEDOR */
+.registro-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  position: relative;
+}
+
+/* TARJETA */
+.registro-card {
+  background: #f3f3f3;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+  animation: fadeIn 0.4s ease;
+}
+
+/* TITULO */
+.registro-card h2 {
+  font-family: 'Oswald';
+  font-size: 30px;
+}
+
+.sub {
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+/* INPUT */
+input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ff6a00;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* BOTÓN REGISTRO */
+.btn-registro {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(45deg, #ff6a00, #ff9a3c);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-registro:hover {
+  transform: scale(1.05);
+}
+
+/* RESULTADO */
+.resultado {
+  margin-top: 20px;
+  padding: 15px;
+  background: white;
+  border: 2px dashed #ff6a00;
+  border-radius: 10px;
+  animation: aparecer 0.3s ease;
+}
+
+.numero {
+  font-size: 65px;
+  color: #ff6a00;
+  font-weight: bold;
+}
+
+/* LISTA */
+.lista {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.lista ul {
+  list-style: none;
+  max-height: 130px;
+  overflow-y: auto;
+}
+
+.lista li {
+  padding: 5px;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* BOTON VOLVER */
+.btn-back {
+  margin-top: 15px;
+  width: 100%;
+  padding: 12px;
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-back:hover {
+  background: black;
+}
+
+/* ANIMACIONES */
+@keyframes aparecer {
+  from {opacity:0; transform:translateY(10px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeIn {
+  from {opacity:0;}
+  to {opacity:1;}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ===== PORTADA ===== -->
+<section class="main">
+  <div class="card">
+
+    <div class="line"></div>
+    <p class="invite">ESTÁS INVITADO A</p>
+    <div class="line"></div>
+
+    <h1>BIRTHDAY NENA</h1>
+    <h2>Run & Fun</h2>
+
+    <div class="icons">🎂 🏃 🏁</div>
+
+    <div class="info">
+      <div>
+        <b>05 JULIO 2026</b><br>8:00 AM
+      </div>
+      <div>
+        <b>PARQUE LAS MARAVILLAS</b>
+      </div>
+    </div>
+
+    <div class="line"></div>
+
+    <button class="btn-main" onclick="irRegistro()">REGÍSTRATE AQUÍ</button>
+
+    <div class="line"></div>
+
+  </div>
+</section>
+
+<!-- ===== REGISTRO ===== -->
+<section id="registro" class="registro">
+  <div class="registro-container">
+    
+    <div class="registro-card">
+
+      <h2>REGISTRO</h2>
+      <p class="sub">Participa en la carrera 🎉</p>
+
+      <input type="text" id="nombre" placeholder="Escribe tu nombre">
+
+      <button class="btn-registro" onclick="registrar()">INSCRIBIRME</button>
+
+      <div id="resultado" class="resultado"></div>
+
+      <div class="lista">
+        <h3>🏁 Corredores inscritos</h3>
+        <ul id="lista"></ul>
+      </div>
+
+      <button class="btn-back" onclick="volverInicio()">⬅ VOLVER AL INICIO</button>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+
+let participantes = JSON.parse(localStorage.getItem("corredores")) || [];
+let numero = participantes.length + 1;
+
+function irRegistro() {
+  document.querySelector(".main").style.display = "none";
+  document.getElementById("registro").style.display = "flex";
+  document.body.style.overflow = "auto";
+
+  // 🔥 limpiar el resultado
+  document.getElementById("resultado").innerHTML = "";
+
+  // limpiar input
+  document.getElementById("nombre").value = "";
+
+  mostrarLista();
+}
+
+function volverInicio() {
+  document.getElementById("registro").style.display = "none";
+  document.querySelector(".main").style.display = "flex";
+  document.body.style.overflow = "hidden";
+
+  // 🔥 limpiar también al regresar
+  document.getElementById("resultado").innerHTML = "";
+  document.getElementById("nombre").value = "";
+}
+
+function registrar() {
+  let nombre = document.getElementById("nombre").value.trim();
+
+  if (nombre === "") {
+    alert("Escribe tu nombre");
+    return;
+  }
+
+  let corredor = {
+    nombre: nombre,
+    numero: numero
+  };
+
+  participantes.push(corredor);
+
+  localStorage.setItem("corredores", JSON.stringify(participantes));
+
+  document.getElementById("resultado").innerHTML = `
+    🎉 ${nombre}<br>
+    Tu número es:
+    <div class="numero">${numero}</div>
+  `;
+
+  numero++;
+  document.getElementById("nombre").value = "";
+
+  mostrarLista();
+}
+
+function mostrarLista() {
+  let lista = document.getElementById("lista");
+  lista.innerHTML = "";
+
+  participantes.forEach(p => {
+    lista.innerHTML += `<li>#${p.numero} - ${p.nombre}</li>`;
+  });
+}
+
+</script>
+
+</body>
+</html>
