@@ -250,4 +250,44 @@ input {
   z-index: 999;
 }
 
+/* 📱 AJUSTES PARA CELULAR */
+@media (max-width: 600px) {
+
+  .card {
+    width: 95%;
+    height: auto;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .icons {
+    font-size: 30px;
+  }
+
+  .info {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .registro-container {
+    padding: 10px;
+  }
+
+  .registro-card {
+    padding: 20px;
+  }
+
+  .numero {
+    font-size: 50px;
+  }
+
+}
 
