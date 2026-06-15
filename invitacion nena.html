@@ -1,329 +1,62 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-
-<!-- ✅ IMPORTANTE PARA CELULAR -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Birthday Nena Run</title>
-
-<!-- FUENTES -->
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
-
-<style>
-
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial;
-  overflow: hidden;
-}
-
-/* ===== PORTADA ===== */
-.main {
-  min-height: 100vh;
-  background: #eeeeee;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  padding: 15px; /* 👈 ayuda en celular */
-}
-
-.card {
-  width: 100%;
-  max-width: 380px;
-  min-height: 90vh;
-
-  border: 8px solid #ff6a00;
-  padding: 20px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  text-align: center;
-  background: #eeeeee;
-}
-
-.line {
-  height: 2px;
-  background: #ff6a00;
-}
-
-.invite {
-  font-size: 12px;
-}
-
-h1 {
-  font-family: 'Oswald', sans-serif;
-  font-size: 55px;
-  line-height: 0.9;
-}
-
-h2 {
-  font-family: 'Pacifico', cursive;
-  color: #ff6a00;
-}
-
-.icons {
-  font-size: 40px;
-}
-
-.info {
-  display: flex;
-  justify-content: space-between;
-  font-size: 14px;
-}
-
-.btn-main {
-  background: none;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* ===== REGISTRO ===== */
-.registro {
-  display: none;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #ff6a00, #ff8c42);
-
-  justify-content: center;
-  align-items: center;
-
-  padding: 15px;
-}
-
-.registro-card {
-  width: 100%;
-  max-width: 360px;
-
-  background: #f3f3f3;
-  padding: 25px;
-  border-radius: 12px;
-  text-align: center;
-
-  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-}
-
-.registro-card h2 {
-  font-family: 'Oswald';
-  font-size: 30px;
-}
-
-.sub {
-  font-size: 13px;
-  margin-bottom: 15px;
-}
-
-/* INPUT */
-input {
-  width: 100%;
-  padding: 12px;
-  border: 2px solid #ff6a00;
-  border-radius: 6px;
-  margin-bottom: 15px;
-}
-
-/* BOTÓN */
-.btn-registro {
-  width: 100%;
-  padding: 14px;
-  background: linear-gradient(45deg, #ff6a00, #ff9a3c);
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.resultado {
-  margin-top: 15px;
-  padding: 10px;
-  background: white;
-  border: 2px dashed #ff6a00;
-  border-radius: 10px;
-}
-
-/* NÚMERO GRANDE */
-.numero {
-  font-size: 60px;
-  color: #ff6a00;
-  font-weight: bold;
-}
-
-/* LISTA */
-.lista {
-  margin-top: 15px;
-  text-align: left;
-}
-
-.lista ul {
-  list-style: none;
-  max-height: 120px;
-  overflow-y: auto;
-}
-
-.lista li {
-  padding: 5px;
-  border-bottom: 1px solid #ddd;
-}
-
-/* BOTÓN REGRESO */
-.btn-back {
-  margin-top: 15px;
-  width: 100%;
-  padding: 12px;
-  background: #222;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-/* ✅ CELULAR */
-@media (max-width: 600px) {
-
-  h1 {
-    font-size: 40px;
-  }
-
-  h2 {
-    font-size: 22px;
-  }
-
-  .icons {
-    font-size: 30px;
-  }
-
-  .info {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-  }
-
-}
-
-/* 🔐 BOTON SECRETO */
-#secretZone {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 70px;
-  height: 70px;
-}
-
-</style>
-</head>
-
-<body>
-
-<!-- ===== PORTADA ===== -->
-<section class="main">
-  <div class="card">
-
-    <div class="line"></div>
-    <p class="invite">ESTÁS INVITADO A</p>
-    <div class="line"></div>
-
-    <h1>BIRTHDAY NENA</h1>
-    <h2>Run & Fun</h2>
-
-    <div class="icons">🎂 🏃 🏁</div>
-
-    <div class="info">
-      <div>
-        <b>05 JULIO 2026</b><br>8:00 AM
-      </div>
-      <div>
-        <b>PARQUE LAS MARAVILLAS</b>
-      </div>
-    </div>
-
-    <div class="line"></div>
-
-    <button class="btn-main" onclick="irRegistro()">REGÍSTRATE AQUÍ</button>
-
-    <div class="line"></div>
-
-  </div>
-</section>
-
-<!-- ===== REGISTRO ===== -->
-<section id="registro" class="registro">
-
-  <div class="registro-card">
-
-    <h2>REGISTRO</h2>
-    <p class="sub">Participa en la carrera 🎉</p>
-
-    <input type="text" id="nombre" placeholder="Escribe tu nombre">
-
-    <button class="btn-registro" onclick="registrar()">INSCRIBIRME</button>
-
-    <div id="resultado" class="resultado"></div>
-
-    <div class="lista">
-      <h3>🏁 Corredores inscritos</h3>
-      <ul id="lista"></ul>
-    </div>
-
-    <button class="btn-back" onclick="volverInicio()">⬅ VOLVER AL INICIO</button>
-
-  </div>
-
-</section>
-
-<!-- BOTÓN SECRETO -->
-<div id="secretZone"></div>
+<!-- FIREBASE SDK --><!-- FIREBASE="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
 
 <script>
 
-let participantes = JSON.parse(localStorage.getItem("corredores")) || [];
-let numero = participantes.length + 1;
+// 🔥 PEGA TU CONFIG AQUÍ
+const firebaseConfig = {
+  apiKey: "AIzaSyDSJIAa8Gt9QHCqPlVvVxNymt9x0bwVWCw",
+  authDomain: "birthday-nena-run.firebaseapp.com",
+  projectId: "birthday-nena-run",
+  storageBucket: "birthday-nena-run.firebasestorage.app",
+  messagingSenderId: "70315599108",
+  appId: "1:70315599108:web:0d0772c39e50cdc9271c51",
+  measurementId: "G-KCVD8HX9KR"
+};
 
-/* Ir registro */
+
+// Inicializar
+const app = firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+// Ir a registro
 function irRegistro() {
   document.querySelector(".main").style.display = "none";
   document.getElementById("registro").style.display = "flex";
-  document.body.style.overflow = "auto";
-
-  document.getElementById("resultado").innerHTML = "";
-  document.getElementById("nombre").value = "";
-
-  mostrarLista();
 }
 
-/* Volver inicio */
+// Volver inicio
 function volverInicio() {
   document.getElementById("registro").style.display = "none";
   document.querySelector(".main").style.display = "flex";
-  document.body.style.overflow = "hidden";
-
-  document.getElementById("resultado").innerHTML = "";
-  document.getElementById("nombre").value = "";
 }
 
-/* Registrar */
-function registrar() {
-  let nombre = document.getElementById("nombre").value.trim();
+// REGISTRAR PERSONA
+async function registrar() {
+  const nombre = document.getElementById("nombre").value.trim();
 
-  if (nombre === "") {
+  if (!nombre) {
     alert("Escribe tu nombre");
     return;
   }
 
-  let corredor = { nombre, numero };
-  participantes.push(corredor);
+  // 🔥 Obtener último número
+  const snapshot = await db.collection("corredores")
+    .orderBy("numero", "desc")
+    .limit(1)
+    .get();
 
-  localStorage.setItem("corredores", JSON.stringify(participantes));
+  let numero = 1;
+
+  if (!snapshot.empty) {
+    numero = snapshot.docs[0].data().numero + 1;
+  }
+
+  // Guardar en Firebase
+  await db.collection("corredores").add({
+    nombre,
+    numero
+  });
 
   document.getElementById("resultado").innerHTML = `
     🎉 ${nombre}<br>
@@ -331,50 +64,21 @@ function registrar() {
     <div class="numero">${numero}</div>
   `;
 
-  numero++;
   document.getElementById("nombre").value = "";
-
-  mostrarLista();
 }
 
-/* Mostrar lista */
-function mostrarLista() {
-  let lista = document.getElementById("lista");
-  lista.innerHTML = "";
+// 🔥 ESCUCHAR CAMBIOS EN TIEMPO REAL
+db.collection("corredores")
+  .orderBy("numero")
+  .onSnapshot(snapshot => {
 
-  participantes.forEach(p => {
-    lista.innerHTML += `<li>#${p.numero} - ${p.nombre}</li>`;
+    const lista = document.getElementById("lista");
+    lista.innerHTML = "";
+
+    snapshot.forEach(doc => {
+      const data = doc.data();
+      lista.innerHTML += `<li>#${data.numero} - ${data.nombre}</li>`;
+    });
   });
-}
-
-/* BOTÓN SECRETO */
-let timer;
-const zona = document.getElementById("secretZone");
-
-zona.addEventListener("mousedown", start);
-zona.addEventListener("mouseup", cancel);
-zona.addEventListener("touchstart", start);
-zona.addEventListener("touchend", cancel);
-
-function start() {
-  timer = setTimeout(() => {
-    let clave = prompt("Clave secreta");
-
-    if (clave === "1234") {
-      localStorage.removeItem("corredores");
-      participantes = [];
-      numero = 1;
-      mostrarLista();
-      alert("Registros borrados");
-    }
-  }, 2000);
-}
-
-function cancel() {
-  clearTimeout(timer);
-}
 
 </script>
-
-</body>
-</html>
